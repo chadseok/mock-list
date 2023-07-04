@@ -5,22 +5,29 @@ const api = axios.create({
   timeout: 1000,
 });
 
-export const getPostList = () => {
-  return api.get(`/posts`);
+export const listLoader = async () => {
+  const response = await api.get("/posts");
+  return response.data;
 };
 
-export const getPostContent = (postId: number) => {
-  return api.get(`/posts/${postId}`);
+export const postLoader = async (postId: string) => {
+  const [content, comments] = await Promise.all([
+    api.get(`/posts/${postId}`),
+    api.get(`/posts/${postId}/comments`),
+  ]);
+
+  return {
+    content: content.data,
+    comments: comments.data,
+    commentss: comments,
+  };
 };
 
-export const getPostComments = (postId: number) => {
-  return api.get(`/posts/${postId}/comments`);
-};
+export const aboutLoader = async (userId: string) => {
+  const [userInfo, userPosts] = await Promise.all([
+    api.get(`/users/${userId}`),
+    api.get(`/users/${userId}/posts`),
+  ]);
 
-export const getUserInfo = (userId: number) => {
-  return api.get(`/users/${userId}`);
-};
-
-export const getUserPosts = (userId: number) => {
-  return api.get(`/users/${userId}/posts`);
+  return { userInfo: userInfo.data, userPosts: userPosts.data };
 };
