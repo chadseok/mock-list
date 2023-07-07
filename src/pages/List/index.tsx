@@ -1,9 +1,9 @@
-import useAxiosLoaderData from "../../lib/hooks/useAxiosLoaderData";
+import { useLoaderData } from "react-router-dom";
 import PostPreview from "./PostPreview";
 import type { PostData } from "../../lib/types/main";
 
 const List = () => {
-  const postDataList = useAxiosLoaderData() as PostData[];
+  const postDataList = useLoaderData() as PostData[];
 
   return (
     <div>
