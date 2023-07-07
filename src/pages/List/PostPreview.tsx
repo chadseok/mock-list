@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import type { PostData } from "../../lib/types/main";
 
-type Props = {
-  postData: PostData;
-};
-
-const PostPreview = ({ postData }: Props) => {
+const PostPreview = ({ postData }: { postData: PostData }) => {
   return (
     <div>
       <Link to={`/post/${postData.id}`}>
