@@ -24,10 +24,10 @@ export const postLoader = async (postId: string) => {
 };
 
 export const aboutLoader = async (userId: string) => {
-  const [userInfo, userPosts] = await Promise.all([
+  const [personalInfo, userPosts] = await Promise.all([
     api.get(`/users/${userId}`),
     api.get(`/users/${userId}/posts`),
   ]);
 
-  return { userInfo: userInfo.data, userPosts: userPosts.data };
+  return { personalInfo: personalInfo.data, userPosts: userPosts.data };
 };
