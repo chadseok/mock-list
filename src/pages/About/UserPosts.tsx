@@ -1,5 +1,5 @@
-import { PostData } from "../../lib/types/main";
-import PostPreview from "../List/PostPreview";
+import PostPreview from "pages/List/PostPreview";
+import type { PostData } from "lib/types/main";
 
 const UserPosts = ({ userPosts }: { userPosts: PostData[] }) => {
   return (

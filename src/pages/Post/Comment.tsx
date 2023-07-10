@@ -1,4 +1,4 @@
-import type { CommentData } from "../../lib/types/main";
+import type { CommentData } from "lib/types/main";
 
 const Comment = ({ commentData }: { commentData: CommentData }) => {
   return (

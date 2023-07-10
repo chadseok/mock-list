@@ -1,5 +1,5 @@
-import { CommentData } from "../../lib/types/main";
 import Comment from "./Comment";
+import type { CommentData } from "lib/types/main";
 
 const Comments = ({ commentsData }: { commentsData: CommentData[] }) => {
   return (

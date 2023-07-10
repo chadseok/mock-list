@@ -1,4 +1,4 @@
-import { PersonalData } from "../../lib/types/main";
+import type { PersonalData } from "lib/types/main";
 
 const PersonalInfo = ({ personalInfo }: { personalInfo: PersonalData }) => {
   return (

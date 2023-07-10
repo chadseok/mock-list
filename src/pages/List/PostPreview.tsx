@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { PostData } from "../../lib/types/main";
+import type { PostData } from "lib/types/main";
 
 const PostPreview = ({ postData }: { postData: PostData }) => {
   return (

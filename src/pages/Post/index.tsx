@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Content from "./Content";
 import Comments from "./Comments";
-import type { CommentData, PostData } from "../../lib/types/main";
+import type { CommentData, PostData } from "lib/types/main";
 
 const Post = () => {
   const postData = useLoaderData() as {

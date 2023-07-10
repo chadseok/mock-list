@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import PersonalInfo from "./PersonalInfo";
 import UserPosts from "./UserPosts";
-import type { PostData, PersonalData } from "../../lib/types/main";
+import type { PostData, PersonalData } from "lib/types/main";
 
 const About = () => {
   const aboutData = useLoaderData() as {

@@ -1,4 +1,4 @@
-import type { PostData } from "../../lib/types/main";
+import type { PostData } from "lib/types/main";
 
 const Content = ({ contentData }: { contentData: PostData }) => {
   return (

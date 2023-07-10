@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import PostPreview from "./PostPreview";
-import type { PostData } from "../../lib/types/main";
+import type { PostData } from "lib/types/main";
 
 const List = () => {
   const postDataList = useLoaderData() as PostData[];
