@@ -10,7 +10,7 @@ const Post = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-4 w-[48rem] mx-auto p-10">
       <Content contentData={postData.content} />
       <Comments commentsData={postData.comments} />
     </div>
