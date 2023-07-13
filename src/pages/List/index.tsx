@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import PostPreview from "./PostPreview";
+import PostPreview from "components/PostPreview";
 import type { PostData } from "lib/types/main";
 
 const List = () => {
