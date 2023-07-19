@@ -1,9 +1,12 @@
+import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import PostPreview from "components/PostPreview";
 import type { PostData } from "lib/types/main";
+import Pagination from "./Pagination";
 
 const List = () => {
+  const [page, setPage] = React.useState(1);
   const postDataList = useLoaderData() as PostData[];
 
   return (
@@ -14,10 +17,11 @@ const List = () => {
         <FaQuoteRight />
       </div>
       <div>
-        {postDataList.map((postData) => (
+        {postDataList.slice(10 * (page - 1), 10 * page).map((postData) => (
           <PostPreview key={postData.id} postData={postData} />
         ))}
       </div>
+      <Pagination page={page} setPage={setPage} />
     </div>
   );
 };
