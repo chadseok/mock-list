@@ -24,12 +24,27 @@ const Pagination = ({ page, setPage }: Props) => {
   };
 
   return (
-    <div>
-      <FaAngleLeft onClick={moveBackward} />
+    <div className="flex gap-8 justify-center items-center mt-8">
+      <FaAngleLeft
+        size={24}
+        className="hover:scale-150 duration-300"
+        onClick={moveBackward}
+      />
       {pageBundle.map((pageNum) => (
-        <button onClick={() => setPage(pageNum)}>{pageNum}</button>
+        <button
+          className={`w-8 h-8 rounded-md ${
+            pageNum === page ? "bg-gray-500 text-slate-50" : "bg-gray-100"
+          }`}
+          onClick={() => setPage(pageNum)}
+        >
+          {pageNum}
+        </button>
       ))}
-      <FaAngleRight onClick={moveForward} />
+      <FaAngleRight
+        size={24}
+        className="hover:scale-150 duration-300"
+        onClick={moveForward}
+      />
     </div>
   );
 };
