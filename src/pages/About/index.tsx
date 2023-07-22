@@ -10,7 +10,8 @@ const About = () => {
   };
 
   return (
-    <div>
+    <div className="mx-auto w-[40rem] px-4 py-8">
+      <h2 className="font-bold text-3xl">{aboutData.personalInfo.name}</h2>
       <PersonalInfo personalInfo={aboutData.personalInfo} />
       <UserPosts userPosts={aboutData.userPosts} />
     </div>
