@@ -10,7 +10,7 @@ const List = () => {
   const postDataList = useLoaderData() as PostData[];
 
   return (
-    <div className="my-0 mx-auto p-10 w-[48rem]">
+    <div className="mx-auto px-4 py-8 w-[40rem]">
       <div className="flex gap-2 mb-10">
         <FaQuoteLeft />
         <h2 className="text-3xl">POSTS</h2>
