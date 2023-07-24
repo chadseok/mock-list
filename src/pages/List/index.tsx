@@ -9,6 +9,10 @@ const List = () => {
   const [page, setPage] = React.useState(1);
   const postDataList = useLoaderData() as PostData[];
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
   return (
     <div className="mx-auto px-4 py-8 w-[40rem]">
       <div className="flex gap-2 mb-10">
