@@ -10,7 +10,7 @@ const PostPreview = ({ postData }: { postData: PostData }) => {
         </span>
       </Link>
       <Link to={`/post/${postData.id}`}>
-        <h3 className="text-xl mb-2">{postData.title}</h3>
+        <h3 className="text-xl my-2 font-bold">{postData.title}</h3>
         <p className="text-slate-500 text-sm">{postData.body}</p>
       </Link>
     </div>
