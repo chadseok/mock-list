@@ -1,10 +1,15 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import List from "pages/List";
 import Post from "pages/Post";
 import About from "pages/About";
 import { postLoader, listLoader, aboutLoader } from "./loader";
 
 const router = createBrowserRouter([
+  { path: "/", element: <Navigate to="/list" /> },
   { path: "/list", element: <List />, loader: listLoader },
   {
     path: "/post/:postId",
