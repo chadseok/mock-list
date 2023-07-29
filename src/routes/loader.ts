@@ -19,7 +19,6 @@ export const postLoader = async (postId: string) => {
   return {
     content: content.data,
     comments: comments.data,
-    commentss: comments,
   };
 };
 
