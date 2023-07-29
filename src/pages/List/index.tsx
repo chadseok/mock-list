@@ -15,7 +15,7 @@ const List = () => {
 
   return (
     <div className="mx-auto px-4 py-8 w-[40rem]">
-      <div className="flex gap-2 mb-10">
+      <div className="flex gap-2 mb-4">
         <FaQuoteLeft />
         <h2 className="text-3xl">POSTS</h2>
         <FaQuoteRight />
