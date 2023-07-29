@@ -6,19 +6,36 @@ import {
 import List from "pages/List";
 import Post from "pages/Post";
 import About from "pages/About";
+import Layout from "components/layout/Layout";
 import { postLoader, listLoader, aboutLoader } from "./loader";
 
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/list" /> },
-  { path: "/list", element: <List />, loader: listLoader },
+  {
+    path: "/list",
+    element: (
+      <Layout>
+        <List />
+      </Layout>
+    ),
+    loader: listLoader,
+  },
   {
     path: "/post/:postId",
-    element: <Post />,
+    element: (
+      <Layout>
+        <Post />
+      </Layout>
+    ),
     loader: ({ params }) => postLoader(params.postId!),
   },
   {
     path: "/about/:userId",
-    element: <About />,
+    element: (
+      <Layout>
+        <About />
+      </Layout>
+    ),
     loader: ({ params }) => aboutLoader(params.userId!),
   },
 ]);
