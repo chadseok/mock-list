@@ -1,17 +1,21 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useSearchParams } from "react-router-dom";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import PostPreview from "components/PostPreview";
 import type { PostData } from "lib/types/main";
 import Pagination from "./Pagination";
 
 const List = () => {
-  const [page, setPage] = React.useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = React.useState(
+    Number(searchParams.get("page") || "1")
+  );
   const postDataList = useLoaderData() as PostData[];
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [page]);
+    setSearchParams({ page: `${page}` });
+  }, [page, setSearchParams]);
 
   return (
     <div className="mx-auto px-4 py-8 w-[40rem]">
