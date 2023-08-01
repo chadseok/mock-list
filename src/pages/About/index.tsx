@@ -1,3 +1,4 @@
+import React from "react";
 import { useLoaderData } from "react-router-dom";
 import PersonalInfo from "./PersonalInfo";
 import UserPosts from "./UserPosts";
@@ -8,6 +9,10 @@ const About = () => {
     personalInfo: PersonalData;
     userPosts: PostData[];
   };
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="mx-auto w-[40rem] px-4 py-8">
