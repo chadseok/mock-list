@@ -22,6 +22,16 @@ export const postLoader = async (postId: string) => {
   };
 };
 
+export const albumListLoader = async () => {
+  const response = await api.get("/albums");
+  return response.data;
+};
+
+export const albumLoader = async (userId: string) => {
+  const response = await api.get(`/albums/${userId}/photos`);
+  return response.data;
+};
+
 export const aboutLoader = async (userId: string) => {
   const [personalInfo, userPosts] = await Promise.all([
     api.get(`/users/${userId}`),

@@ -6,8 +6,16 @@ import {
 import List from "pages/List";
 import Post from "pages/Post";
 import About from "pages/About";
+import AlbumList from "pages/AlbumList";
+import Album from "pages/Album";
 import Layout from "components/layout/Layout";
-import { postLoader, listLoader, aboutLoader } from "./loader";
+import {
+  postLoader,
+  listLoader,
+  aboutLoader,
+  albumListLoader,
+  albumLoader,
+} from "./loader";
 
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/list" /> },
@@ -28,6 +36,24 @@ const router = createBrowserRouter([
       </Layout>
     ),
     loader: ({ params }) => postLoader(params.postId!),
+  },
+  {
+    path: "/albums",
+    element: (
+      <Layout>
+        <AlbumList />
+      </Layout>
+    ),
+    loader: albumListLoader,
+  },
+  {
+    path: "/albums/:userId",
+    element: (
+      <Layout>
+        <Album />
+      </Layout>
+    ),
+    loader: ({ params }) => albumLoader(params.userId!),
   },
   {
     path: "/about/:userId",
