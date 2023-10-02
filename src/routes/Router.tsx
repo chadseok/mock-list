@@ -3,7 +3,7 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
-import List from "pages/List";
+import PostList from "pages/PostList";
 import Post from "pages/Post";
 import About from "pages/About";
 import AlbumList from "pages/AlbumList";
@@ -20,16 +20,16 @@ import {
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/list" /> },
   {
-    path: "/list",
+    path: "/posts",
     element: (
       <Layout>
-        <List />
+        <PostList />
       </Layout>
     ),
     loader: listLoader,
   },
   {
-    path: "/post/:postId",
+    path: "/posts/:postId",
     element: (
       <Layout>
         <Post />

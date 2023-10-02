@@ -5,7 +5,7 @@ import PostPreview from "components/PostPreview";
 import type { PostData } from "lib/types/main";
 import Pagination from "./Pagination";
 
-const List = () => {
+const PostList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = React.useState(
     Number(searchParams.get("page") || "1")
@@ -34,4 +34,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default PostList;

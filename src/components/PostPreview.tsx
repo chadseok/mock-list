@@ -9,7 +9,7 @@ const PostPreview = ({ postData }: { postData: PostData }) => {
           Written By <strong>{postData.userId}</strong>
         </span>
       </Link>
-      <Link to={`/post/${postData.id}`}>
+      <Link to={`/posts/${postData.id}`}>
         <h3 className="text-xl my-2 font-bold">{postData.title}</h3>
         <p className="text-slate-500 text-sm">{postData.body}</p>
       </Link>
