@@ -29,3 +29,17 @@ export type PersonalData = {
   };
   company: { bs: string; catchPhrase: string; name: string };
 };
+
+export type AlbumData = {
+  userId: number;
+  id: number;
+  title: string;
+};
+
+export type PhotoData = {
+  albumId: number;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+};
