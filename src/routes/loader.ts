@@ -27,8 +27,8 @@ export const albumListLoader = async () => {
   return response.data;
 };
 
-export const albumLoader = async (userId: string) => {
-  const response = await api.get(`/albums/${userId}/photos`);
+export const albumLoader = async (albumId: string) => {
+  const response = await api.get(`/albums/${albumId}/photos`);
   return response.data;
 };
 

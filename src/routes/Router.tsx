@@ -47,13 +47,13 @@ const router = createBrowserRouter([
     loader: albumListLoader,
   },
   {
-    path: "/albums/:userId",
+    path: "/albums/:albumId",
     element: (
       <Layout>
         <Album />
       </Layout>
     ),
-    loader: ({ params }) => albumLoader(params.userId!),
+    loader: ({ params }) => albumLoader(params.albumId!),
   },
   {
     path: "/about/:userId",
