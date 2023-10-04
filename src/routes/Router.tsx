@@ -18,7 +18,7 @@ import {
 } from "./loader";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Navigate to="/list" /> },
+  { path: "/", element: <Navigate to="/posts" /> },
   {
     path: "/posts",
     element: (
