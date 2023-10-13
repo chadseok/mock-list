@@ -28,8 +28,12 @@ export const albumListLoader = async () => {
 };
 
 export const albumLoader = async (albumId: string) => {
-  const response = await api.get(`/albums/${albumId}/photos`);
-  return response.data;
+  const [albumInfo, photoList] = await Promise.all([
+    api.get(`/albums/${albumId}`),
+    api.get(`/albums/${albumId}/photos`),
+  ]);
+
+  return { albumInfo: albumInfo.data, photoList: photoList.data };
 };
 
 export const aboutLoader = async (userId: string) => {
