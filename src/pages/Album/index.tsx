@@ -33,7 +33,7 @@ const Album = () => {
   };
 
   return (
-    <div className="mx-auto px-4 py-8 w-[48rem]">
+    <div className="mx-auto px-4 py-8 w-[40rem]">
       <h2 className="text-3xl font-bold mb-8">{albumData.albumInfo.title}</h2>
       <div className="grid grid-cols-4 gap-4">
         {albumData.photoList.map((photo, index) => (
