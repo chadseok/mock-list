@@ -2,11 +2,23 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="h-16 bg-slate-100 px-4">
-      <div className="flex items-center h-full">
+    <header className="fixed top-0 right-0 z-10 w-full h-16 border-b border-slate-200 backdrop-blur-2xl">
+      <div className="flex justify-between items-center h-full w-[40rem] mx-auto px-4">
         <Link to="/">
           <h2 className="font-bold text-2xl">post-list</h2>
         </Link>
+        <ul className="flex gap-8">
+          <li>
+            <Link to="/posts">
+              <span>📝post</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/albums">
+              <span>📔album</span>
+            </Link>
+          </li>
+        </ul>
       </div>
     </header>
   );
