@@ -1,6 +1,6 @@
 # mock-list
 
-![main-image](https://cdn.discordapp.com/attachments/1016940382061346880/1164116359173656606/2023-10-18_5.21.24.png?ex=65420ad8&is=652f95d8&hm=1aa4329040eb736b1660cc94577f20cbef404fb1f4359759ff687c97a31394ea&)
+![main-image](https://cdn.discordapp.com/attachments/1016940382061346880/1164126127103692860/screely-1697619684327.png?ex=654213f1&is=652f9ef1&hm=517da9a19401530c5e6a97bdd6f2f8e4f076d9aa82089b5c77c792d291539fed&)
 
 ## 🧤 프로젝트 소개
 
