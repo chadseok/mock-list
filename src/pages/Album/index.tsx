@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 import type { AlbumData, PhotoData } from "lib/types/main";
 import Photo from "./Photo";
 
@@ -45,12 +46,11 @@ const Album = () => {
         ))}
       </div>
       {isModalOn && (
-        <div className="fixed top-0 right-0 w-full h-screen bg-black/60">
-          <div className="flex justify-center items-center gap-4 h-full">
-            <button className="text-4xl" onClick={movePrevPhoto}>
-              ⬅️
+        <div className="fixed top-0 right-0 z-20 w-full h-screen bg-black/60">
+          <div className="flex justify-center items-center gap-16 h-full">
+            <button onClick={movePrevPhoto} className="p-4">
+              <AiOutlineLeft size={80} fill="white" />
             </button>
-
             <div className="bg-white p-4">
               <img
                 src={albumData.photoList[currentPhotoIndex].url}
@@ -60,15 +60,15 @@ const Album = () => {
                 {albumData.photoList[currentPhotoIndex].title}
               </h2>
             </div>
-            <button onClick={moveNextPhoto} className="text-4xl">
-              ➡️
+            <button onClick={moveNextPhoto} className="p-4">
+              <AiOutlineRight size={80} fill="white" />
             </button>
           </div>
           <button
-            className="absolute top-4 right-4 text-3xl"
+            className="absolute top-0 right-0 p-4"
             onClick={closePhotoModal}
           >
-            ❌
+            <AiOutlineClose size={50} fill="white" />
           </button>
         </div>
       )}
