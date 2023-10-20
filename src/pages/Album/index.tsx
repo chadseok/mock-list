@@ -1,10 +1,11 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 import type { AlbumData, PhotoData } from "lib/types/main";
 import Photo from "./Photo";
 
 const Album = () => {
+  const navigate = useNavigate();
   const albumData = useLoaderData() as {
     photoList: PhotoData[];
     albumInfo: AlbumData;
@@ -35,7 +36,18 @@ const Album = () => {
 
   return (
     <div className="mx-auto px-4 py-8 w-[40rem]">
-      <h2 className="text-3xl font-bold mb-8">{albumData.albumInfo.title}</h2>
+      <div>
+        <button
+          className="flex items-center gap-2 py-2 px-4 border border-slate-300 rounded-md text-sm hover:bg-slate-200"
+          onClick={() => {
+            navigate("/albums");
+          }}
+        >
+          <AiOutlineLeft />
+          <span>앨범리스트</span>
+        </button>
+      </div>
+      <h2 className="text-3xl font-bold my-8">{albumData.albumInfo.title}</h2>
       <div className="grid grid-cols-3 gap-4">
         {albumData.photoList.map((photo, index) => (
           <Photo
